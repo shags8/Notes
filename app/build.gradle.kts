@@ -57,4 +57,6 @@ dependencies {
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     implementation (libs.androidx.room.runtime)
     kapt (libs.androidx.room.compiler.v243)
+    implementation (libs.glide)
+    implementation (libs.circleimageview)
 }

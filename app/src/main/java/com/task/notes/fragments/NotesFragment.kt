@@ -86,13 +86,14 @@ class NotesFragment : Fragment() {
     }
 
     private fun showAddNoteDialog() {
-        val inputView = EditText(requireContext())
+        val inputView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_note, null)
+        val editText = inputView.findViewById<EditText>(R.id.inputNote)
         val userId = auth.currentUser?.uid
         AlertDialog.Builder(requireContext())
             .setTitle("Add New Note")
             .setView(inputView)
             .setPositiveButton("Add") { _, _ ->
-                val content = inputView.text.toString()
+                val content = editText.text.toString()
                 if (content.isNotEmpty()) {
                     val newNote = userId?.let { Note(0, content, it,getRandomColor()) }
                     if (newNote != null) {
@@ -105,13 +106,14 @@ class NotesFragment : Fragment() {
     }
 
     private fun showEditNoteDialog(note: Note) {
-        val inputView = EditText(requireContext())
-        inputView.setText(note.content)
+        val inputView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_note, null)
+        val editText = inputView.findViewById<EditText>(R.id.inputNote)
+        editText.setText(note.content)
         AlertDialog.Builder(requireContext())
             .setTitle("Edit Note")
             .setView(inputView)
             .setPositiveButton("Save") { _, _ ->
-                val content = inputView.text.toString()
+                val content = editText.text.toString()
                 if (content.isNotEmpty()) {
                     val updatedNote = note.copy(content = content)
                     notesViewModel.update(updatedNote)
