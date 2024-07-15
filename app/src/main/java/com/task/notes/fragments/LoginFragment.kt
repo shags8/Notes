@@ -80,7 +80,12 @@ class LoginFragment : Fragment() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    (activity as MainActivity).navigateToFragment(NotesFragment())
+                    val isNewUser = task.result?.additionalUserInfo?.isNewUser ?: false
+                    if (isNewUser) {
+                        (activity as MainActivity).navigateToFragment(SignupFragment())
+                    } else {
+                        (activity as MainActivity).navigateToFragment(NotesFragment())
+                    }
                 }
             }
     }

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -36,10 +37,13 @@ class NotesAdapter(private val onNoteClicked: (Note) -> Unit) :
 
     inner class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val noteTextView: TextView = itemView.findViewById(R.id.note_content)
+        private val card : CardView = itemView.findViewById(R.id.card)
 
         fun bind(note: Note) {
             noteTextView.text = note.content
             itemView.setOnClickListener { onNoteClicked(note) }
+//            itemView.setBackgroundColor(note.color)
+            card.setCardBackgroundColor(note.color)
         }
     }
 }

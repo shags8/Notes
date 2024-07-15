@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.SignupFragment">
+
+    <TextView
+        android:id="@+id/notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notes"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:textColor="#2979FF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Your"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/notes"
+        app:layout_constraintEnd_toEndOf="@id/notes"
+        app:layout_constraintTop_toBottomOf="@id/notes"/>
+    <TextView
+        android:id="@+id/profile2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/profile"
+        app:layout_constraintEnd_toEndOf="@id/profile"
+        app:layout_constraintTop_toBottomOf="@id/profile"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="40dp"
+        android:hint="@string/name"
+        android:maxLines="1"
+        android:lines="1"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="10dp"
+        android:background="@drawable/textview_boder"
+        app:layout_constraintStart_toStartOf="@id/profile2"
+        app:layout_constraintEnd_toEndOf="@id/profile2"
+        app:layout_constraintTop_toBottomOf="@id/profile2"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="25dp"
+        android:hint="@string/email"
+        android:maxLines="1"
+        android:lines="1"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="10dp"
+        android:background="@drawable/textview_boder"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintEnd_toEndOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textSize="20sp"
+        android:paddingHorizontal="30dp"
+        android:backgroundTint="#2979FF"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="@id/email"
+        app:layout_constraintEnd_toEndOf="@id/email"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

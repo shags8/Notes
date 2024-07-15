@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-
         if (savedInstanceState == null) {
             if (isLoggedIn()) {
                 navigateToFragment(NotesFragment())

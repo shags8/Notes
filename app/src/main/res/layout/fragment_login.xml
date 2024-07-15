@@ -4,14 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context="com.task.notes.fragments.LoginFragment">
+
+
+    <TextView
+        android:id="@+id/notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notes"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:textColor="#2979FF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Your Notes "
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/notes"
+        app:layout_constraintStart_toStartOf="@id/notes"
+        app:layout_constraintEnd_toEndOf="@id/notes" />
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="in One Place"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        app:layout_constraintStart_toStartOf="@id/text"
+        app:layout_constraintEnd_toEndOf="@id/text" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/log_in"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="#2979FF"
+        android:drawablePadding="8dp"
+        app:drawableStartCompat="@drawable/icons8_google"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:padding="20dp"

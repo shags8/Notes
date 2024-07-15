@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import com.task.notes.db.Note
 import com.task.notes.db.NoteDAO
 
-class NotesRepo(private val noteDao: NoteDAO) {
-    val allNotes: LiveData<List<Note>> = noteDao.getAllNotes()
+class NotesRepo(private val noteDao: NoteDAO ,  userId: String) {
+
+    val allNotes: LiveData<List<Note>> = noteDao.getAllNotes(userId)
 
     suspend fun insert(note: Note) {
         noteDao.insert(note)
