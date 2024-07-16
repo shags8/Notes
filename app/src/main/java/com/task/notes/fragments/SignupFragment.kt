@@ -15,6 +15,7 @@ import com.task.notes.MainActivity
 import com.task.notes.R
 import com.task.notes.db.User
 import com.task.notes.db.UserDao
+import com.task.notes.db.UserDatabase
 import kotlinx.coroutines.launch
 
 class SignupFragment : Fragment() {
@@ -35,6 +36,7 @@ class SignupFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_signup, container, false)
 
         auth = FirebaseAuth.getInstance()
+        userDao = UserDatabase.getDatabase(requireContext()).userDao()
 
         val name = auth.currentUser?.displayName
         val email = auth.currentUser?.email
