@@ -25,6 +25,8 @@ class ProfileFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
     }
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +38,7 @@ class ProfileFragment : Fragment() {
         }
         val userImage = auth.currentUser?.photoUrl
         val profileImageView: CircleImageView = view.findViewById(R.id.UserProfilePhoto)
+        //Using Library for user photo
         Glide.with(this)
             .load(userImage)
             .into(profileImageView)
